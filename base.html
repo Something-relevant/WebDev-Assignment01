@@ -1,0 +1,34 @@
+<html lang="en" dir="ltr">
+  <head>
+    {%block head%}
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+
+    <meta name="description" content="Want to learn something new but don't know what?"/>
+    <!-- this is the description when searched under title //-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- this stops the webpage from shrinking to unreadable text -->
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'screen.css' )}}"/> <!-- ../ goes back file -->
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block content %} 
+      <div id="container">
+          
+          <div id="menu">
+            <div class="list"></div>
+          </div>
+
+
+          <div id="frame">
+            <div id="Activate"></div>
+          </div> 
+          
+      </div>
+        {% endblock %}
+  </body>
+</html>

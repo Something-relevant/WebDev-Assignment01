@@ -1,0 +1,54 @@
+
+/* id Selectors */
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Share+Tech+Mono&display=swap');
+
+
+
+#Container{position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #020;
+}
+
+#menu{
+position: absolute;
+width: 647px;
+height: 672px;
+left: 184px;
+top: 169px;
+}
+
+#frame{
+  background-image: url(framevector.svg);  
+  position: fixed;
+}
+
+#Activate{
+position: absolute;
+width: 357px;
+height: 357px;
+left: 925px;
+top: 155px;
+}
+/*You can have a max of four background images in one def*/
+
+
+/*class selectors*/
+.list {
+    padding-top: 18px;
+    padding-left: 8px;
+    font-family:'Share Tech Mono', monospace;
+    font-size: 2rem;
+    color: #15AFD0;
+    }
+
+.
+/* tag se;Selectors */
+body {
+  background-color: #020;
+  color: #2A8;
+  font-family: 'Monda', sans-serif;
+  margin: 0;
+}
+
