@@ -2,13 +2,22 @@
 /* id Selectors */
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Share+Tech+Mono&display=swap');
 
+body {
+  font-family: 'Monda', sans-serif;
+  margin: 0;
+  background: black;
+}
 
 
-#Container{position: relative;
-width: 1440px;
-height: 1024px;
-
-background: #020;
+#Container{
+  position: fixed;
+  height: 100%;
+  width:100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
 }
 
 #menu{
@@ -19,9 +28,10 @@ left: 184px;
 top: 169px;
 }
 
-#frame{
-  background-image: url(framevector.svg);  
-  position: fixed;
+#hull{
+  width: 1440px;
+  height: 1024px;
+  align-items: center;
 }
 
 #Activate{
@@ -43,12 +53,23 @@ top: 155px;
     color: #15AFD0;
     }
 
-.
-/* tag se;Selectors */
-body {
-  background-color: #020;
-  color: #2A8;
-  font-family: 'Monda', sans-serif;
-  margin: 0;
+.bigbutton{
+  height: 350px;
+  width: 350px;
 }
 
+.bigbutton hover {
+  background-image: url(PngButtonPressed.png);
+
+}
+
+.frame{
+  background-image: url(Frame.png);
+  position: fixed;
+  object-fit: cover;
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%
+}
+/* tag se;Selectors */
