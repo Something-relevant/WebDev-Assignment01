@@ -1,31 +1,71 @@
 
 /* id Selectors */
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300|Press+Start+2P|Share+Tech+Mono&display=swap');
+
 
 body {
-  font-family: 'Monda', sans-serif;
   margin: 0;
-  background: black;
+  font: #008FF1;
+  font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+  font-size: 14px;
 }
 
+p {
+  font: #008FF1;
+  font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+  font-size: 14px;
+  overflow: hidden;
+  border-right: .15em solid #008FF1 ;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #008FF1 }
+  }
+
+
+  input[type="text"] {
+    background: transparent;
+    border: 6px;
+    border-color: #008FF1;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+  }
 
 #Container{
   position: fixed;
-  height: 100%;
-  width:100%;
+  height: 1420px;
+  width:880px;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: hidden;
+  overflow: visible;
+  background-color: black;
 }
 
 #menu{
-position: absolute;
+position: relative;
 width: 647px;
 height: 672px;
 left: 184px;
 top: 169px;
+background: white;
+float: left;;
 }
 
 #hull{
@@ -35,41 +75,55 @@ top: 169px;
 }
 
 #Activate{
-position: absolute;
+position: relative;
 width: 357px;
 height: 357px;
 left: 925px;
 top: 155px;
+float: right;
 }
 /*You can have a max of four background images in one def*/
 
 
 /*class selectors*/
-.list {
-    padding-top: 18px;
-    padding-left: 8px;
-    font-family:'Share Tech Mono', monospace;
-    font-size: 2rem;
-    color: #15AFD0;
-    }
+.nextbutton{
+
+}
 
 .bigbutton{
   height: 350px;
   width: 350px;
+  background-image: url(PngButton.png);
+  transition: background-image 0.5s;
+  transition: color 0.5s;
 }
 
 .bigbutton hover {
   background-image: url(PngButtonPressed.png);
+  text-decoration: none;
+  transition: background-color 0.5s;
 
 }
 
 .frame{
-  background-image: url(Frame.png);
+  /*background-image: url(Frame.png);*/
   position: fixed;
   object-fit: cover;
-  height: auto;
-  width: auto;
+  height: 1920px;
+  width: 1080px;
   max-height: 100%;
-  max-width: 100%
+  max-width: 100%;
+  background-image: url(framevector.svg);
+}
+
+img{
+    height: auto;
+    max-width: 100%;
+
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {  /* 50% */
+  }
 }
 /* tag se;Selectors */

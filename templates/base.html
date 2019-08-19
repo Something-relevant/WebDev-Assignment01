@@ -5,10 +5,10 @@
     <title>{% block title %}Die Wiki Ap 5000{% endblock %}</title>
 
 
-    <meta name="description" content="Want to learn something new but don't know what?"/>
+    <meta name="description" content="Challenge yourself to the formiddable wikipedia challenge"/>
     <!-- this is the description when searched under title //-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"/>
     <!-- this stops the webpage from shrinking to unreadable text -->
 
     <link rel="stylesheet" href="{{url_for('static', filename = 'screen.css' )}}"/> <!-- ../ goes back file -->
@@ -19,23 +19,17 @@
     {% block content %}
       <div id="container">
 
+
         <div class="frame">
 
-          <div id="menu">
-            <div class="list"></div>
-          </div>
+          <!--<img src="{{url_for('static', filename = 'Frame.png' )}}" class="frameborder" /> -->
 
-          <div id="Activate">
-            <a href="" class="bigbutton"></a>
-          </div>
 
-          <div id="footer">
-            {{disclaimer}}
-          </div>
 
-        </div>
+        {% endblock %}
 
       </div>
-        {% endblock %}
+
+    </div>
   </body>
 </html>

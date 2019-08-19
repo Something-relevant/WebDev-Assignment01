@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}212 Burgers{% endblock %}
+
+{% block content %}
+
+  <body>
+
+    <div id="menu">
+      <p> Well Done <!--name entry here --><br>
+        You completed <!-- previous name --> challenge <br><br>
+        Your time was <!-- time --><br>
+        <br><br><br> Please Enter the next challenge
+
+        <form action="/leaderboard" method="post">
+
+        <div class="inputfield">
+          <p>
+            <label for="nxtchallenge">--></label>
+            <input type="text" id="nxtchallenge" name="nxtchallenge" required autofocus />
+          </p>
+
+          <input type="submit" value="submit challenge" class="submitchallenge" />
+
+          <div>
+        </form>
+
+        <div id="Activate">
+          <a href="" class="bigbutton"></a>
+        </div>
+
+
+    </div>
+
+  {%endblock%}
