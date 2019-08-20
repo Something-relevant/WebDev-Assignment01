@@ -3,31 +3,44 @@
 {% block title %}Die Wiki Ap 5000{% endblock %}
 
 {% block content %}
+<div id="container">
 
-  <body>
+  <div class="frame">
 
-    <div id="menu">
-      <p>booting............<br>
-        Loading up the knowledge of the universe<br>
-        Accessing the Matrix<br>
-        101110101010111100101010101010101100010101010101010101010101010101010101010101010101001010101<br>
-        <br><br> Welcome <br><br> Please enter your code name </p>
 
-        <form action="/confirm" method="post">
 
-        <div class="inputfield">
-          <p>
-            <label for="name">--></label>
-            <input type="text" id="name" name="name" required autofocus />
-          </p>
+      <div id="menu">
 
-          <div>
+        <p>booting............</p>
+        <p><br />Loading up the knowledge of the univers0</p>
+        <p>Accessing the Matrix</p>
+        <p>1011101010101111001010101010101</p>
+        <p>
+          <br /><br />
+          Welcome
+          <br /><br />
+          Please enter your code name
+        </p>
+
+        <form action="/brief" method="post">
+          <div class="inputfield">
+            <p>
+              <br /><br />
+              <label for="name">--&gt;</label>
+              <input type="text" id="name" name="name" required autofocus />
+            </p>
+          </div>
         </form>
 
-        <div id="Activate">
-          <a href="" class="bigbutton"></a>
-        </div>
+        <a href="" class="nextpage"><br /> <br /> <br />NEXT</a>
 
-    </div>
+      </div>
+
+      <div id="Activate">
+        <a href="" class="bigbutton"></a>
+      </div>
+
+
+</div>
 
   {%endblock%}

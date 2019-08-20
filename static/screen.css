@@ -4,23 +4,16 @@
 
 
 body {
-  margin: 0;
-  font: #008FF1;
+  color: #008F11 ;
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
+  background: black;
 }
 
 p {
-  font: #008FF1;
+  color: #008F11 ;
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
-  overflow: hidden;
-  border-right: .15em solid #008FF1 ;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation:
-    typing 2.5s steps(30, end),
-    blink-caret .5s step-end infinite;
   }
 
   /* The typing effect */
@@ -32,40 +25,44 @@ p {
   /* The typewriter cursor effect */
   @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: #008FF1 }
+    50% { border-color: #008F11 }
   }
 
 
   input[type="text"] {
     background: transparent;
-    border: 6px;
-    border-color: #008FF1;
+    border: 4px #008F11 solid;
+    color: #008F11 ;
+    font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+    font-size: 14px;
+
   }
 
   input[type="text"]:focus {
     outline: none;
+    color: : #008F11 ;
+    font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+    font-size: 14px;
   }
 
 #Container{
-  position: fixed;
-  height: 1420px;
-  width:880px;
+  height:auto;
+  width:auto;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  overflow: visible;
   background-color: black;
+
 }
 
 #menu{
-position: relative;
-width: 647px;
-height: 672px;
-left: 184px;
-top: 169px;
-background: white;
-float: left;;
+  width: inherit;
+  height: 500px;
+  margin-top: 270px;
+  margin-left: 200px;
+  background: transparent;
+  background-color: transparent;
 }
 
 #hull{
@@ -75,12 +72,14 @@ float: left;;
 }
 
 #Activate{
-position: relative;
-width: 357px;
-height: 357px;
-left: 925px;
-top: 155px;
-float: right;
+  width: 357px;
+  height: 357px;
+  left: 1020;
+  top: 195px;
+  border: 20px #008F11 solid;
+  border-radius: 3000px;
+  filter: blur(30);
+  position: fixed;
 }
 /*You can have a max of four background images in one def*/
 
@@ -107,20 +106,42 @@ float: right;
 
 .frame{
   /*background-image: url(Frame.png);*/
+  background-repeat: no-repeat;
+  background-size: contain;
   position: fixed;
-  object-fit: cover;
-  height: 1920px;
-  width: 1080px;
-  max-height: 100%;
-  max-width: 100%;
-  background-image: url(framevector.svg);
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  }
+
+
 }
 
-img{
+.nextpage{
+  padding-top:100px;
+  align-content: center;
+  width: 150px;
+  height: 100px;
+}
+
+a.nextpage
+{
+  color: black;
+  background-color:#008F11;
+  text-decoration:none;
+  border: 2px #008F11 solid;
+}
+
+a:hover{
+  background-color:black;
+  color: #008F11;
+}
+
+/*img{
     height: auto;
     max-width: 100%;
 
-}
+}*/
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {  /* 50% */

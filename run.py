@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3
+import random
 
 app = Flask(__name__)
 
-#MENUDB = 'menu.db'
+MENUDB = 'menu.db'
+#table= wikipedia
+#table = challengers
 
 def fetchName(con):
     name=[]
@@ -14,7 +17,7 @@ def fetchName(con):
     for lastname in last_entry:
         print(lastname)
 
-    return{'name':name}
+    return name
 
 
 
