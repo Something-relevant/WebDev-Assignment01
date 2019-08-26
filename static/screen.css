@@ -17,16 +17,6 @@ p {
   }
 
   /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #008F11 }
-  }
 
 
   input[type="text"] {
@@ -60,7 +50,7 @@ p {
   width: inherit;
   height: 500px;
   margin-top: 270px;
-  margin-left: 200px;
+  margin-left: 100px;
   background: transparent;
   background-color: transparent;
 }

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3
-import random
+from random import random
 
 app = Flask(__name__)
 
@@ -19,28 +19,39 @@ def fetchName(con):
 
     return name
 
+def fetchChallenge(con):
+    challenge=[]
+    cur=conn.cursor()
+    db="SELECT challenge FROM challengers ORDER BY random() LIMIT 1"
+    cur.execute(db)
+    for challenge in cur:
+        print(challenge)
+
+    return challenge
 
 
-@app.route('/')
+
+@app.route('/', methods=['POST'])
 def index():
 
-    #alias = {}
-    #for input in request.form:
-    #    if input == 'name':
-    #        alias[input] = request.form[input]
+    alias = {}
+    for input in request.form:
+        if input == 'name':
+            alias[input] = request.form[input]
 
 
-    #con = sqlite3.connect(MENUDB)
-    #name = fetchName(con)
-    #con.close()
-    return render_template('index.html', disclaimer='used for educational purposes')#remember to change
+    con = sqlite3.connect(MENUDB)
+    lastuser = fetchName(con)
+    con.close()
+    return render_template('index.html',alias=alias,lastuser=lastuser)#remember to change
 
 @app.route('/brief')
 def brief():
-    #con = sqlite3.connect(MENUDB)
-    #name = fetchName(con)
-    #con.close()
-    return render_template('brief.html')
+    print(request.form)
+    con = sqlite3.connect(MENUDB)
+    lastuser = fetchName(con)
+    con.close()
+    return render_template('brief.html', alias=alias,name=name)
 
 @app.route('/challenge')
 def challenge():
