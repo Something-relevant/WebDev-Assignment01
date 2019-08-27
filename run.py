@@ -10,7 +10,7 @@ MENUDB = 'menu.db'
 
 def fetchName(con):
     name=[]
-    cur=conn.cursor()
+    cur=con.cursor()
     db="SELECT name FROM challengers ORDER BY ID DESC LIMIT 1"
     cur.execute(db)
     last_entry = cur.fetchone()
@@ -21,18 +21,33 @@ def fetchName(con):
 
 def fetchChallenge(con):
     challenge=[]
-    cur=conn.cursor()
+    cur=con.cursor()
     db="SELECT challenge FROM challengers ORDER BY random() LIMIT 1"
     cur.execute(db)
     for challenge in cur:
         print(challenge)
 
-    return challenge
+    prevchallenger=[]
+    cur=con.cursor()
+    db="SELECT name FROM challengers ORDER BY random() LIMIT 1"
+    cur.execute(db)
+    for prevchallenger in cur:
+        print(prevchallenger)
+
+    return {'prevchallenger':prevchallenger, 'challenge':challenge}
 
 
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def index():
+
+    con = sqlite3.connect(MENUDB)
+    lastuser = fetchName(con)
+    con.close()
+    return render_template('index.html', lastuser=lastuser)#remember to change
+
+@app.route('/brief', methods=['POST'])
+def brief():
 
     alias = {}
     for input in request.form:
@@ -40,29 +55,22 @@ def index():
             alias[input] = request.form[input]
 
 
-    con = sqlite3.connect(MENUDB)
-    lastuser = fetchName(con)
-    con.close()
-    return render_template('index.html',alias=alias,lastuser=lastuser)#remember to change
-
-@app.route('/brief')
-def brief():
     print(request.form)
     con = sqlite3.connect(MENUDB)
     lastuser = fetchName(con)
     con.close()
-    return render_template('brief.html', alias=alias,name=name)
+    return render_template('brief.html', alias=alias,lastuser=lastuser)
 
 @app.route('/challenge')
 def challenge():
-    #con = sqlite3.connect(MENUDB)
-    #menu = fetchMenu(con)
-    #con.close()
-    return render_template('challenge.html')
+    con = sqlite3.connect(MENUDB)
+    ch = fetchChallenge(con)
+    con.close()
+    return render_template('challenge.html', challenge=ch['challenge'], prevchallenger=ch['prevchallenger'])
 
 @app.route('/submission')
 def submission():
-    #con = sqlite3.connect(MENUDB)
-    #name = fetchName(con)
-    #con.close()
+    con = sqlite3.connect(MENUDB)
+    name = fetchName(con)
+    con.close()
     return render_template('submission.html')

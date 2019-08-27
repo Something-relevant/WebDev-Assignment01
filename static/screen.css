@@ -8,6 +8,7 @@ body {
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
   background: black;
+  line-height: 1.35;
 }
 
 p {
@@ -19,7 +20,7 @@ p {
   /* The typing effect */
 
 
-  input[type="text"] {
+input[type="text"] {
     background: transparent;
     border: 4px #008F11 solid;
     color: #008F11 ;
@@ -28,12 +29,19 @@ p {
 
   }
 
-  input[type="text"]:focus {
+input[type="text"]:focus {
     outline: none;
     color: : #008F11 ;
     font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
     font-size: 14px;
   }
+
+input {
+      outline: none;
+      color: : #008F11 ;
+      font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+      font-size: 14px;
+    }
 
 #Container{
   height:auto;
@@ -47,7 +55,8 @@ p {
 }
 
 #menu{
-  width: inherit;
+  max-width: 700px;
+  min-width: 500px;
   height: 500px;
   margin-top: 270px;
   margin-left: 100px;
@@ -107,11 +116,20 @@ p {
 
 }
 
+
 .nextpage{
-  padding-top:100px;
-  align-content: center;
-  width: 150px;
-  height: 100px;
+  outline: none;
+  font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+  font-size: 14px;
+  color: black;
+  background-color:#008F11;
+  text-decoration:none;
+  border: 2px #008F11 solid;
+}
+
+.nextpage:hover{
+  background-color:black;
+  color: #008F11;
 }
 
 a.nextpage
