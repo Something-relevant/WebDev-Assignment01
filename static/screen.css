@@ -8,13 +8,13 @@ body {
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
   background: black;
-  line-height: 1.35;
 }
 
 p {
   color: #008F11 ;
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
+  line-height: 1.45;
   }
 
   /* The typing effect */
@@ -45,11 +45,9 @@ input {
 
 #Container{
   height:auto;
-  width:auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  width:1000px;
+  margin-left:auto;
+  margin-right: auto;
   background-color: black;
 
 }
@@ -71,14 +69,18 @@ input {
 }
 
 #Activate{
-  width: 357px;
-  height: 357px;
+  width: 257px;
+  height: 57px;
   left: 1020;
-  top: 195px;
+  margin-top: 55px;
   border: 20px #008F11 solid;
-  border-radius: 3000px;
   filter: blur(30);
-  position: fixed;
+}
+
+#Timer{
+  height: 200px;
+  width: 300px;
+
 }
 /*You can have a max of four background images in one def*/
 
@@ -88,7 +90,7 @@ input {
 
 }
 
-.bigbutton{
+a.bigbutton{
   height: 350px;
   width: 350px;
   background-image: url(PngButton.png);
@@ -96,7 +98,7 @@ input {
   transition: color 0.5s;
 }
 
-.bigbutton hover {
+a.bigbutton hover {
   background-image: url(PngButtonPressed.png);
   text-decoration: none;
   transition: background-color 0.5s;

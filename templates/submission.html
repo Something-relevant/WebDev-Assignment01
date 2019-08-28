@@ -7,27 +7,23 @@
   <body>
 
     <div id="menu">
-      <p> Well Done <!--name entry here --><br>
-        You completed <!-- previous name --> challenge <br><br>
-        Your time was <!-- time --><br>
-        <br><br><br> Please Enter the next challenge
+      <p> Welcome to reality {{alias}}<br>
+        You made it to {{prevchallenger}} exit <br><br>
+        <br><br><br> Please Enter the next exit to help save another soul</p>
 
-        <form action="/leaderboard" method="post">
+        <form action="/Confirm" method="post">
 
         <div class="inputfield">
           <p>
             <label for="nxtchallenge">--></label>
-            <input type="text" id="nxtchallenge" name="nxtchallenge" required autofocus />
+            <input type="text" id="challenge" name="challenge" required autofocus />
           </p>
 
-          <input type="submit" value="submit challenge" class="submitchallenge" />
+          <input type="submit" value="SUBMIT" class="nextpage"/>
 
           <div>
         </form>
 
-        <div id="Activate">
-          <img src="" alt="">
-        </div>
 
 
     </div>

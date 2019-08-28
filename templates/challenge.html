@@ -4,25 +4,26 @@
 
 {% block content %}
 
-  <body>
-
     <div id="menu">
       <p>contacting challenger..........<br>
         Creating pathways of infinite knowledge....................<br>
-        accessing alien database......<br>
-        000000000001011111101011010101001<br>
+        <br>When you finish click on submit a challnege
         <br><br> Prepare yourself <br><br>
         {{prevchallenger}} has challenged you to find <br><br>
          {{challenge}}<br><br><br> PRESS BUTTON TO START </p>
 
-         <div id="Activate">
-           <a href="https://en.wikipedia.org/wiki/Special:random" class="bigbutton" target="_blank"><<img src="" alt="">BIG BUTTON</a>
-         </div>
+         <a href="/submission" class="nextpage">Submit a challenge</a>
 
 
          <!-- have a timer start and the completion url appear -->
+       </div>
 
+       <div id="Timer">
+         <h2>{{timer}}</h2>
+       </div>
 
-    </div>
+       <div id="Activate">
+         <p><a href="https://en.wikipedia.org/wiki/Special:random" class="bigbutton" target="_blank"><img src="" alt="" />BIG BUTTON</a></p>
+       </div>
 
   {%endblock%}
