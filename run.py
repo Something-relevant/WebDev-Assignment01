@@ -87,13 +87,18 @@ def submission():
 
 @app.route('/Confirm', methods=['GET','POST'])
 def Confirm():
-    alias= request.form.get('name')
-    #nxtchallenge={}
-    #for input in request.form:
-     # if input == 'name':
-         # alias[input] = request.form[input]
+    alias={}
+    nxtchallenge={}
+    for input in request.form:
+      if input == 'name':
+          alias[input] = request.form[input]
 
-    nxtchallenge[input] = request.form.get['nxtchallenge']
+    for input in request.form:
+        if input == 'nxtchallenge':
+            nxtchallenge[input] = request.form[input]
+
+    #alias= request.form.get('name')
+    #nxtchallenge[input] = request.form.get['next']
 
     con = sqlite3.connect(MENUDB)
 #   name = fetchName(con)

@@ -43,12 +43,31 @@ input {
       font-size: 14px;
     }
 
+
+a {
+      color: black;
+      background-color:#008F11;
+      text-decoration:none;
+      border: 2px #008F11 solid;
+    }
+
+a:hover{
+      background-color:black;
+      color: #008F11;
+    }
+
+
 #Container{
   height:auto;
   width:1000px;
-  margin-left:auto;
-  margin-right: auto;
+  margin-left:85px;
   background-color: black;
+
+}
+
+#header{
+  width: 1200px;
+  height:250px;
 
 }
 
@@ -56,8 +75,7 @@ input {
   max-width: 700px;
   min-width: 500px;
   height: 500px;
-  margin-top: 270px;
-  margin-left: 100px;
+  margin-left: 88px;
   background: transparent;
   background-color: transparent;
 }
@@ -130,19 +148,6 @@ a.bigbutton hover {
 }
 
 .nextpage:hover{
-  background-color:black;
-  color: #008F11;
-}
-
-a.nextpage
-{
-  color: black;
-  background-color:#008F11;
-  text-decoration:none;
-  border: 2px #008F11 solid;
-}
-
-a:hover{
   background-color:black;
   color: #008F11;
 }
