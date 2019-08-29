@@ -90,9 +90,11 @@ a:hover{
   width: 257px;
   height: 57px;
   margin-top: 15px;
-  border: 5px #008F11 solid;
+  border: 15px #000 solid;
   background-color: #008F11;
   filter: blur(30);
+  text-align: center;
+  font-size: 18px;
 }
 
 #Timer{
@@ -116,7 +118,6 @@ a:hover{
 a.bigbutton{
   height: 350px;
   width: 350px;
-  background-image: url(PngButton.png);
   transition: background-image 0.5s;
   transition: color 0.5s;
 }
@@ -150,7 +151,7 @@ a.nextpage{
   color: black;
   background-color:#008F11;
   text-decoration:none;
-  border: 2px #008F11 solid;
+  border: 2px #000 solid;
 }
 
 .nextpage:hover{

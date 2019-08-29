@@ -25,14 +25,14 @@ def fetchChallenge(con):
     db="SELECT challenge FROM challengers ORDER BY random() LIMIT 1"
     cur.execute(db)
     for challenge in cur:
-        print(challenge)
+        challenge.append(challenge)
 
     prevchallenger=[]
     cur=con.cursor()
     db="SELECT name FROM challengers ORDER BY random() LIMIT 1"
     cur.execute(db)
     for prevchallenger in cur:
-        print(prevchallenger)
+        prevchallenger(prevchallenger)
 
     return {'prevchallenger':prevchallenger, 'challenge':challenge}
 
@@ -64,7 +64,6 @@ def brief():
             alias[input] = request.form[input]
 
 
-    print(request.form)
     con = sqlite3.connect(MENUDB)
     lastuser = fetchName(con)
     con.close()
@@ -80,7 +79,6 @@ def challenge():
 
 @app.route('/submission')
 def submission():
-    print(request.form)
     con = sqlite3.connect(MENUDB)
     con.close()
     return render_template('submission.html')
