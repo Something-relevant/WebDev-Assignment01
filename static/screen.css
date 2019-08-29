@@ -8,6 +8,7 @@ body {
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
   background: black;
+  background-image: url({{url_for('static', filename='screenbackground.png')}});
 }
 
 p {
@@ -44,8 +45,7 @@ input {
     }
 
 
-a {
-      color: black;
+a {   color: black;
       background-color:#008F11;
       text-decoration:none;
       border: 2px #008F11 solid;
@@ -67,15 +67,15 @@ a:hover{
 
 #header{
   width: 1200px;
-  height:250px;
+  height:200px;
 
 }
 
 #menu{
   max-width: 700px;
   min-width: 500px;
-  height: 500px;
-  margin-left: 88px;
+  height: 100px;
+  margin-left: 171px;
   background: transparent;
   background-color: transparent;
 }
@@ -89,9 +89,9 @@ a:hover{
 #Activate{
   width: 257px;
   height: 57px;
-  left: 1020;
-  margin-top: 55px;
-  border: 20px #008F11 solid;
+  margin-top: 15px;
+  border: 5px #008F11 solid;
+  background-color: #008F11;
   filter: blur(30);
 }
 
@@ -99,6 +99,11 @@ a:hover{
   height: 200px;
   width: 300px;
 
+}
+
+#logo{
+  height: 400px;
+  width:400px;
 }
 /*You can have a max of four background images in one def*/
 
@@ -137,10 +142,11 @@ a.bigbutton hover {
 }
 
 
-.nextpage{
+a.nextpage{
   outline: none;
   font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
   font-size: 14px;
+  padding-top: 20px;
   color: black;
   background-color:#008F11;
   text-decoration:none;
@@ -158,8 +164,28 @@ a.bigbutton hover {
 
 }*/
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {  /* 50% */
+@media (max-width: 1024px) { /* Specific to this particular image */
+
+  #header{
+    width: 1200px;
+    height:200px;
+    background-image: url({{url_for('static', filename='header2.png')}}");
+
   }
+
+  body {
+    color: #008F11 ;
+    font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+    font-size: 10px;
+    background: black;
+    background-image: url({{url_for('static', filename='screenbackground.png')}});
+  }
+
+  p {
+    color: #008F11 ;
+    font-family: 'Press Start 2P','IBM Plex Sans Condensed','Share Tech Mono', monospace;
+    font-size: 10px;
+    line-height: 1.45;
+    }
 }
 /* tag se;Selectors */
