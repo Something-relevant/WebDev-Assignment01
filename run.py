@@ -62,10 +62,16 @@ def brief():
 
     for input in request.form:
         if input == 'name':
-            alias[input] = request.form[input]
+            alias = request.form[input]
 
 
     con = sqlite3.connect(MENUDB)
+    cur = con.execute(
+    'INSERT INTO challengers(name) VALUES(?)',
+    (str(alias),)
+    )
+
+    con.commit()
     lastuser = fetchName(con)
     con.close()
     return render_template('brief.html', alias=alias,lastuser=lastuser)
@@ -98,8 +104,9 @@ def Confirm():
 #   name = fetchName(con)
     ch = fetchChallenge(con)
     cur = con.execute(
-    'INSERT INTO challengers(name, challenge) VALUES(?, ?)',
-    (str(alias), str(nxtchallenge)))
+    'INSERT INTO challengers(challenge) VALUES(?)',
+    (str(nxtchallenge),)
+    )
 
     con.commit()
     con.close()

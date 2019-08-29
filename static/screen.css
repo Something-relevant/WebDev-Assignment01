@@ -55,7 +55,11 @@ a:hover{
       background-color:black;
       color: #008F11;
     }
-
+#bg{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 
 #Container{
   height:auto;
