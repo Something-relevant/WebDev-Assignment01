@@ -15,7 +15,7 @@ def fetchName(con):
     cur.execute(db)
     last_entry = cur.fetchone()
     for lastname in last_entry:
-        print(lastname)
+        name.append(lastname)
 
     return name
 
@@ -85,25 +85,23 @@ def submission():
     con.close()
     return render_template('submission.html')
 
-@app.route('/Confirm', methods=['POST'])
+@app.route('/Confirm', methods=['GET','POST'])
 def Confirm():
-    alias = {}
-    nxtchallenge={}
-    for input in request.form:
-        if input == 'name':
-            alias[input] = request.form[input]
+    alias= request.form.get('name')
+    #nxtchallenge={}
+    #for input in request.form:
+     # if input == 'name':
+         # alias[input] = request.form[input]
 
-    for input in request.form:
-        if input == 'nxtchallenge':
-            nxtchallenge[input] = request.form[input]
+    nxtchallenge[input] = request.form.get['nxtchallenge']
 
     con = sqlite3.connect(MENUDB)
-    name = fetchName(con)
+#   name = fetchName(con)
     ch = fetchChallenge(con)
     cur = con.execute(
     'INSERT INTO challengers(name, challenge) VALUES(?, ?)',
-    (alias['name'], nxtchallenge['challenge'])
-    )
+    (str(alias), str(nxtchallenge)))
+
     con.commit()
     con.close()
-    return render_template('index.html',alias=alias,nxtchallenge=nxtchallenge)
+    return render_template('Confirm.html',alias=alias,nxtchallenge=nxtchallenge)
