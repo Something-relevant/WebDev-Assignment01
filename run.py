@@ -24,15 +24,15 @@ def fetchChallenge(con):
     cur=con.cursor()
     db="SELECT challenge FROM challengers ORDER BY random() LIMIT 1"
     cur.execute(db)
-    for challenge in cur:
-        challenge.append(challenge)
+    for challenges in cur:
+        challenge.append(challenges)
 
     prevchallenger=[]
     cur=con.cursor()
     db="SELECT name FROM challengers ORDER BY random() LIMIT 1"
     cur.execute(db)
-    for prevchallenger in cur:
-        prevchallenger(prevchallenger)
+    for previous in cur:
+        prevchallenger.append(previous)
 
     return {'prevchallenger':prevchallenger, 'challenge':challenge}
 
@@ -59,6 +59,7 @@ def index():
 def brief():
 
     alias = {}
+
     for input in request.form:
         if input == 'name':
             alias[input] = request.form[input]
@@ -85,18 +86,13 @@ def submission():
 
 @app.route('/Confirm', methods=['GET','POST'])
 def Confirm():
-    alias={}
     nxtchallenge={}
-    for input in request.form:
-      if input == 'name':
-          alias[input] = request.form[input]
+    alias = {}
 
-    for input in request.form:
-        if input == 'nxtchallenge':
-            nxtchallenge[input] = request.form[input]
-
-    #alias= request.form.get('name')
-    #nxtchallenge[input] = request.form.get['next']
+    if request.method == "POST":
+        #alias = request.form["name"]
+        nxtchallenge = request.form["challenge"]
+        #alias = request.form("name")
 
     con = sqlite3.connect(MENUDB)
 #   name = fetchName(con)

@@ -152,6 +152,7 @@ a.nextpage{
   background-color:#008F11;
   text-decoration:none;
   border: 2px #000 solid;
+  padding-top: 30px;
 }
 
 .nextpage:hover{
